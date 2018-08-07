@@ -29,7 +29,7 @@ try {
 			return result;
 		};
 
-		//제이쿼리가 있을때
+		//제이쿼리가 함수일때
 		if(typeof $ === 'function') {
 			/**
 			 * @name 제이쿼리 요소확인
