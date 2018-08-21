@@ -84,7 +84,7 @@ try {
 				return result;
 			};
 		}
-	})(jQuery);
+	})(window.jQuery);
 }catch(error) {
 	console.error(error);
 }
