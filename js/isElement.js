@@ -3,9 +3,9 @@
  * @version 1.0.0
  */
 try {
-	'use strict';
-
 	(function($) {
+		'use strict';
+
 		/**
 		 * @name 요소확인
 		 * @since 2017-12-06
