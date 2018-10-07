@@ -2,14 +2,14 @@
 요소인지 확인할 수 있습니다.
 
 ````
-    element \|\| jQueryElement
+    element || jQueryElement
 
     or
 
     {
-        element : element \|\| window \|\| document \|\| array \|\| jQueryElement,
+        element : element || window || document || array || jQueryElement,
         isInPage : boolean,
-        include : window \|\| document \|\| array,
+        include : window || document || array,
         match : boolean
     }
 ````
