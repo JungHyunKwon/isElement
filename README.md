@@ -18,5 +18,5 @@
 | :-- | :-- | :-- |
 element | element \|\| window \|\| document \|\| array \|\| jQueryElement | 요소
 isInPage | boolean | 화면 상에 있는 요소인가 확인하는 변수입니다.
-include | window \|\| document \|\| array | boolean | window 또는 document를 포함할지에 대한 여부입니다.
+include | window \|\| document \|\| array | window 또는 document를 포함할지에 대한 여부입니다.
 match | boolean | 요소가 여러개일 경우 전부일치에 대한 여부입니다.
