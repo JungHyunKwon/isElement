@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+	<title>isElement</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/isElement.js"></script>
+	<script>
+		//요소
+		console.log('element : ' + isElement(document.documentElement));
+		console.log('multiple element : ' + isElement([document.documentElement, document.head]));
+		
+		//제이쿼리 요소
+		console.log('jqueryElement : ' + isElement($('html')));
+		console.log('multiple jqueryElement : ' + isElement($('html, head')));
+		
+		//옵션
+
+		//요소가 화면상에 있는지
+
+		console.log('isInPage : ' + isElement({
+			element : document.documentElement,
+			isInPage : true
+		}));
+
+		console.log('isInPage : ' + isElement({
+			element : document.createElement('div'),
+			isInPage : true
+		}));
+		
+		//window를 요소에 포함시킬지
+
+		console.log('isIncludeWindow : ' + isElement({
+			element : window,
+			isIncludeWindow : false
+		}));
+
+		console.log('isIncludeWindow : ' + isElement({
+			element : window,
+			isIncludeWindow : true
+		}));
+		
+		//document를 요소에 포함시킬지
+
+		console.log('isIncludeDocument : ' + isElement({
+			element : [document.documentElement, document],
+			isIncludeDocument : false
+		}));
+		console.log('isIncludeDocument : ' + isElement({
+			element : [document.documentElement, document],
+			isIncludeDocument : true
+		}));
+
+		//하나라도 요소일때
+		console.log('isMatch : ' + isElement({
+			element : [document.documentElement, document.head, true],
+			isMatch : false
+		}));
+		
+		//전부 요소일때
+		console.log('isMatch : ' + isElement({
+			element : [document.documentElement, document.head, true],
+			isMatch : true
+		}));
+	</script>
+</head>
+<body>
+</body>
+</html>
