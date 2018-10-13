@@ -81,8 +81,7 @@ try {
 
 			//객체 또는 요소일때
 			if(optionsType === 'object') {
-				var hasJQuery = (typeof $ === 'function') ? true : false,
-					element = options.element,
+				var element = options.element,
 					elementType = _getType(element);
 				
 				//window 또는 document 또는 요소일때
@@ -92,7 +91,7 @@ try {
 				}
 
 				//배열이거나 제이쿼리 요소일때
-				if(elementType === 'array' || (hasJQuery && element instanceof $)) {
+				if(elementType === 'array' || (typeof $ === 'function' && element instanceof $)) {
 					var checkedElement = [],
 						elementLength = element.length,
 						isIncludeWindow = (options.isIncludeWindow === true) ? true : false,
