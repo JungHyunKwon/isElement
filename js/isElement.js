@@ -68,17 +68,18 @@ try {
 		 */
 		window.isElement = function(options) {
 			var optionsType = _getType(options),
-				hasJQuery = (typeof $ === 'function') ? true : false,
+				hasJQuery = typeof $ === 'function',
+				isElementOrArrayType = optionsType === 'element' || optionsType === 'array',
 				result = false;
 			
 			//요소이거나 배열이거나 제이쿼리 요소일때
-			if(optionsType === 'element' || optionsType === 'array' || (hasJQuery && options)) {
+			if(isElementOrArrayType || (hasJQuery && options)) {
 				options = {
 					element : options
 				};
 				
 				//요소이거나 배열일때
-				if(optionsType === 'element' || optionsType === 'array') {
+				if(isElementOrArrayType) {
 					optionsType = 'object';
 				}
 			}
@@ -98,20 +99,21 @@ try {
 				if(elementType === 'array' || (hasJQuery && element instanceof $)) {
 					var checkedElement = [],
 						elementLength = element.length,
-						isIncludeWindow = (options.isIncludeWindow === true) ? true : false,
-						isIncludeDocument = (options.isIncludeDocument === true) ? true : false,
-						isInPage = (options.isInPage === true) ? true : false,
+						isIncludeWindow = options.isIncludeWindow === true,
+						isIncludeDocument = options.isIncludeDocument === true,
+						isInPage = options.isInPage === true,
 						html = document.documentElement;
 
 					for(var i = 0; i < elementLength; i++) {
 						var elementI = element[i],
 							elementIType = _getType(elementI),
+							isElementType = elementIType === 'element',
 							isElement = false;
 
 						//요소이거나 window이면서 window를 포함시키는 옵션을 허용했거나 document이면서 document를 포함시키는 옵션을 허용했을때
-						if(elementIType === 'element' || (elementIType === 'window' && isIncludeWindow) || (elementIType === 'document' && isIncludeDocument)) {
+						if(isElementType || (elementIType === 'window' && isIncludeWindow) || (elementIType === 'document' && isIncludeDocument)) {
 							//요소이면서 페이지안에 존재여부를 허용했을때
-							if(elementIType === 'element' && isInPage) {
+							if(isElementType && isInPage) {
 								isElement = html.contains(elementI);
 							}else{
 								isElement = true;
