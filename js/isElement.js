@@ -7,7 +7,7 @@ try {
 
 	(function($) {
 		/**
-		 * @name 형태얻기
+		 * @name 형태 얻기
 		 * @since 2017-12-06
 		 * @param {*} value
 		 * @return {string || undefined}
@@ -15,42 +15,42 @@ try {
 		function _getType(value) {
 			var result;
 			
-			//매개변수가 있을때
+			//매개변수가 있을 때
 			if(arguments.length) {
-				//null일때
+				//null일 때
 				if(value === null) {
 					result = 'null';
 				
-				//undefined일때
+				//undefined일 때
 				}else if(value === undefined) {
 					result = 'undefined';
 				}else{
 					result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 					
-					//Invalid Date일때
+					//Invalid Date일 때
 					if(result === 'date' && isNaN(new Date(value))) {
 						result = 'Invalid Date';
 					
-					//숫자일때
+					//숫자일 때
 					}else if(result === 'number') {
-						//NaN일때
+						//NaN일 때
 						if(isNaN(value)) {
 							result = 'NaN';
 						
-						//Infinity일때
+						//Infinity일 때
 						}else if(!isFinite(value)) {
 							result = value.toString();
 						}
 					
-					//콘솔일때
+					//콘솔일 때
 					}else if(result === 'console') {
 						result = 'object';
 					
-					//요소일때
+					//요소일 때
 					}else if(result.indexOf('element') > -1) {
 						result = 'element';
 					
-					//문서일때
+					//문서일 때
 					}else if(result.indexOf('document') > -1) {
 						result = 'document';
 					}
@@ -72,7 +72,7 @@ try {
 				isElementOrArrayType = optionsType === 'element' || optionsType === 'array',
 				result = false;
 			
-			//요소이거나 배열이거나 제이쿼리 요소일때
+			//요소이거나 배열이거나 제이쿼리 요소일 때
 			if(isElementOrArrayType || (hasJQuery && options)) {
 				options = {
 					element : options
@@ -84,18 +84,18 @@ try {
 				}
 			}
 
-			//객체 또는 요소일때
+			//객체 또는 요소일 때
 			if(optionsType === 'object') {
 				var element = options.element,
 					elementType = _getType(element);
 				
-				//window 또는 document 또는 요소일때
+				//window 또는 document 또는 요소일 때
 				if(elementType === 'window' || elementType === 'document' || elementType === 'element') {
 					element = [element];
 					elementType = 'array';
 				}
 
-				//배열이거나 제이쿼리 요소일때
+				//배열이거나 제이쿼리 요소일 때
 				if(elementType === 'array' || (hasJQuery && element instanceof $)) {
 					var checkedElement = [],
 						elementLength = element.length,
@@ -110,9 +110,9 @@ try {
 							isElementType = elementIType === 'element',
 							isElement = false;
 
-						//요소이거나 window이면서 window를 포함시키는 옵션을 허용했거나 document이면서 document를 포함시키는 옵션을 허용했을때
+						//요소이거나 window이면서 window를 포함시키는 옵션을 허용했거나 document이면서 document를 포함시키는 옵션을 허용했을 때
 						if(isElementType || (elementIType === 'window' && isIncludeWindow) || (elementIType === 'document' && isIncludeDocument)) {
-							//요소이면서 페이지안에 존재여부를 허용했을때
+							//요소이면서 페이지안에 존재여부를 허용했을 때
 							if(isElementType && isInPage) {
 								isElement = html.contains(elementI);
 							}else{
@@ -128,11 +128,11 @@ try {
 
 					var checkedElementLength = checkedElement.length;
 					
-					//결과가 있을때
+					//결과가 있을 때
 					if(checkedElementLength) {
-						//일치를 허용했을때
+						//일치를 허용했을 때
 						if(options.isMatch === true) {
-							//요소갯수와 결과갯수가 같을때
+							//요소갯수와 결과갯수가 같을 때
 							if(elementLength === checkedElementLength) {
 								result = true;
 							}
