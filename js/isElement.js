@@ -68,7 +68,7 @@ try {
 		 */
 		window.isElement = function(options) {
 			var optionsType = _getType(options),
-				hasJQuery = typeof $ === 'function',
+				hasJQuery = typeof window.jQuery === 'function',
 				isElementOrArrayType = optionsType === 'element' || optionsType === 'array',
 				result = false;
 			
