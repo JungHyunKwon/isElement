@@ -42,8 +42,8 @@ try {
 							result = value.toString();
 						}
 					
-					//콘솔이거나 매개변수일 때
-					}else if(result === 'console' || result === 'arguments') {
+					//콘솔일 때
+					}else if(result === 'console') {
 						result = 'object';
 					
 					//요소일 때
