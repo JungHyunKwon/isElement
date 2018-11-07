@@ -2,12 +2,12 @@
 요소인지 확인할 수 있습니다.
 
 ````
-    element || jQueryElement
+    element || array || object
 
     or
 
     {
-        element : element || window || document || jQueryElement || array,
+        element : element || window || document || object || array,
         isInPage : boolean,
         isIncludeWindow : boolean,
 		isIncludeDocument : boolean
