@@ -17,7 +17,7 @@
 
 이름 | 형태 | 설명
 | :-- | :-- | :-- |
-element | element \|\| window \|\| document \|\| jQueryElement \|\| array | 요소
+element | element \|\| window \|\| document \|\| object \|\| array | 요소
 isInPage | boolean | 요소가 화면상에 있는지 확인에 대한 여부입니다.
 isIncludeWindow | boolean | window를 요소에 포함시킬지에 대한 여부입니다.
 isIncludeDocument | boolean | document를 요소에 포함시킬지에 대한 여부입니다.
