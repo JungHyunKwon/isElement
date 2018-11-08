@@ -6,11 +6,17 @@ try {
 	'use strict';
 
 	(function() {
-		window.isElement = function(element) {
+		/**
+		 * @name 요소 확인
+		 * @since 2017-12-06
+		 * @param {element} value
+		 * @return {boolean}
+		 */
+		window.isElement = function(value) {
 			var result = false;
 			
 			try {
-				result = document.documentElement.contains(element);
+				result = document.documentElement.contains(value);
 			}catch(e) {
 				//throw e;
 			}
