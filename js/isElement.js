@@ -12,7 +12,7 @@ try {
 			try {
 				result = document.documentElement.contains(element);
 			}catch(e) {
-				//console.error(e);
+				//throw e;
 			}
 
 			return result;
