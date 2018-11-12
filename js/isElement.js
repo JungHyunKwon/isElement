@@ -7,7 +7,7 @@ try {
 
 	(function() {
 		/**
-		 * @name 요소 확인
+		 * @name isElement
 		 * @since 2017-12-06
 		 * @param {element} value
 		 * @return {boolean}
