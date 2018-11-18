@@ -5,7 +5,9 @@
 try {
 	'use strict';
 
-	(function(html) {
+	(function() {
+		var _html = document.documentElement;
+
 		/**
 		 * @name isElement
 		 * @since 2017-12-06
@@ -16,14 +18,14 @@ try {
 			var result = false;
 			
 			try {
-				result = html.contains(value);
+				result = _html.contains(value);
 			}catch(e) {
 				//throw e;
 			}
 
 			return result;
 		};
-	})(document.documentElement);
+	})();
 }catch(e) {
 	console.error(e);
 }
