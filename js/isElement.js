@@ -9,7 +9,7 @@ try {
 		/**
 		 * @name isElement
 		 * @since 2017-12-06
-		 * @param {element} value
+		 * @param {*} value
 		 * @return {boolean}
 		 */
 		window.isElement = function(value) {
