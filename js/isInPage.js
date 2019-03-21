@@ -7,12 +7,12 @@ try {
 
 	(function(html) {
 		/**
-		 * @name isElement
+		 * @name isInPage
 		 * @since 2017-12-06
 		 * @param {*} value
 		 * @return {boolean}
 		 */
-		window.isElement = function(value) {
+		window.isInPage = function(value) {
 			var result = false;
 			
 			try {
