@@ -5,7 +5,7 @@
 try {
 	'use strict';
 
-	(function(html) {
+	(function(_html) {
 		/**
 		 * @name isInPage
 		 * @since 2017-12-06
@@ -16,7 +16,7 @@ try {
 			var result = false;
 			
 			try {
-				result = html.contains(value);
+				result = _html.contains(value);
 			}catch(e) {
 				//throw e;
 			}
