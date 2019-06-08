@@ -5,7 +5,9 @@
 try {
 	'use strict';
 
-	(function(_html) {
+	(function() {
+		var _html = document.documentElement;
+
 		/**
 		 * @name isInPage
 		 * @since 2017-12-06
@@ -23,7 +25,7 @@ try {
 
 			return result;
 		};
-	})(document.documentElement);
+	})();
 }catch(e) {
 	console.error(e);
 }
