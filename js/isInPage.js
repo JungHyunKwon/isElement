@@ -5,7 +5,7 @@
 (function() {
 	'use strict';
 
-	var _html = document.documentElement;
+	var html = document.documentElement;
 
 	/**
 	 * @name isInPage
@@ -17,7 +17,7 @@
 		var result = false;
 		
 		try {
-			result = _html.contains(value);
+			result = html.contains(value);
 		}catch(e) {
 			//console.error(e);
 		}
