@@ -10,14 +10,14 @@
 	/**
 	 * @name isInPage
 	 * @since 2017-12-06
-	 * @param {*} value
+	 * @param {*} element
 	 * @return {boolean}
 	 */
-	window.isInPage = function(value) {
+	window.isInPage = function(element) {
 		var result = false;
 		
 		try {
-			result = html.contains(value);
+			result = html.contains(element);
 		}catch(e) {
 			//console.error(e);
 		}
